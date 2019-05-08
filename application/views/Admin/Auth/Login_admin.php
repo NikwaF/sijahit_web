@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<!-- 
-Template Name: Brunette - Responsive Bootstrap 4 Admin Dashboard Template
-Author: Hencework
-Contact: https://hencework.ticksy.com/
-
-License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
--->
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -39,16 +31,24 @@ License: You must have a valid license purchased only from templatemonster to le
 							<div class="auth-form-wrap pt-xl-0 pt-70">
 								<div class="auth-form w-xl-30 w-lg-55 w-sm-75 w-100">
 								<!-- ini nanti buat logo -->
-									<form>
+                <form action="<?= site_url('auth/auth_action'); ?>" method="POST">
 										<h1 class="display-4 text-center mb-10">Selamat Datang :)</h1>
 										<p class="text-center mb-30">Silahkan Login.</p> 
+                <?php if($this->session->flashdata('kunci')): ?>
+        <div class="alert <?= $this->session->flashdata('kunci'); ?> alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?=' <p class="text-center">'.$this->session->flashdata('pesan').'</p>' ?>
+            </div>
+         <?php endif; ?>
 										<div class="form-group">
 											<input class="form-control" name="username" placeholder="Username" type="text">
+                        <?php echo form_error('username', '<div class="error text-danger">', '</div>'); ?>
 										</div>
 										<div class="form-group">
 											<div class="input-group">
 												<input class="form-control" name="password" placeholder="Password" type="password">
 											</div>
+                        <?php echo form_error('password', '<div class="error text-danger">', '</div>'); ?>
 										</div>
 										<button class="btn btn-primary btn-block" type="submit">Login</button>
 									</form>

@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log out</span></a>
+                        <a class="dropdown-item" href="<?= site_url('auth/logout'); ?>"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log out</span></a>
                     </div>
                 </li>
             </ul>
