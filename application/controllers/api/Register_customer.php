@@ -33,18 +33,27 @@ class Register_customer extends REST_Controller{
 			'date_created' => date('Y-m-d H:i:s')
 		);
 		
-		$registercoy = $this->reg->register($customer,$alamat);
+		$cekEmail = $this->reg->get_user($halo = array('email' => $post['email']));
 		
-		if(!$registercoy){
+		if(sizeof($cekEmail) > 0 ){
 			$this->response([
 				'status' => false,
-				'pesan' => 'registrasi gagal'
-			],HTTP_BAD_REQUEST);
+				'pesan' => 'email sudah pernah dipakai'
+			],HTTP_BAD_REQUEST);			
 		} else {
-			$this->response([
-				'status' => true,
-				'pesan' => 'registrasi user berhasil'
-			], REST_Controller::HTTP_CREATED);
+			$registercoy = $this->reg->register($customer,$alamat);
+			
+			if(!$registercoy){
+				$this->response([
+					'status' => false,
+					'pesan' => 'registrasi gagal'
+				],HTTP_BAD_REQUEST);
+			} else {
+				$this->response([
+					'status' => true,
+					'pesan' => 'registrasi user berhasil'
+				], REST_Controller::HTTP_CREATED);
+			}			
 		}
 	}
 } 

@@ -15,4 +15,8 @@ class Register_mdl extends CI_Model{
 		//Transactions di return untuk dapetin true ato false, true saaat semua proses insert berjalan
 		return $this->db->trans_complete();
 	}
+	
+	public function get_user($email){
+		return $this->db->get_where('customer',$email)->result_array();
+	}
 }
