@@ -32,19 +32,18 @@ License: You must have a valid license purchased only from templatemonster to le
 
         <!-- Main Content -->
         <div class="hk-pg-wrapper">
+				
+				 <!-- Breadcrumb -->
+				<?php $this->load->view('Templates/Admin/breadcrumb'); ?>
+            <!-- /Breadcrumb -->
 			<!-- Container -->
-            <div class="container mt-xl-50 mt-sm-30 mt-15">
+            <div class="container">
                 <!-- Title -->
-                <div class="hk-pg-header align-items-top">
-                    <div>
-						<h2 class="hk-pg-title font-weight-600 mb-10">Welcome Back!</h2>
-						<p>Questions about onboarding lead data? <a href="#">Learn more.</a></p>
-					</div>
-				</div>
+
                 <!-- /Title -->
 								
 								<!--  isinya disini-->
-								
+								<?php $this->load->view($isinya); ?>
 								
 								
 								

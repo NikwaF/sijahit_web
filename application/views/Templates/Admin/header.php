@@ -4,8 +4,12 @@
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url('assets/brunette/'); ?>favicon.ico">
+    <link rel="icon" href="<?= base_url('assets/brunette/'); ?>favicon.ico" type="image/x-icon">
+		
+		    <!-- Data Table CSS -->
+    <link href="<?= base_url('assets/brunette/'); ?>vendors/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/brunette/'); ?>vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css" />
 	
     <!-- Toggles CSS -->
     <link href="<?= base_url('assets/brunette/'); ?>vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">

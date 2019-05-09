@@ -24,10 +24,20 @@ class Login_customer extends REST_Controller{
 		if(sizeof($cekEmailnya) == 1){
 			
 			if (password_verify($post['password'], $cekEmailnya[0]['password'])){
-			$this->response([
-				'kode' => '1',
-				'pesan' => 'Sukses Login'
-			],HTTP_OK);				
+				if($cekEmailnya[0]['id_roles'] == 1){
+					$this->response([
+						'kode' => '1',
+						'pesan' => 'Sukses Login user'
+					],HTTP_OK);	
+				}
+				
+				if($cekEmailnya[0]['id_roles'] == 2){
+					$this->response([
+						'kode' => '4',
+						'pesan' => 'Sukses Login selamat bekerja'
+					],HTTP_OK);						
+				}								
+				
 			} else {
 			$this->response([
 				'kode' => '2',
