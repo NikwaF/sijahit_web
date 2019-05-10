@@ -23,22 +23,29 @@
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/Dashboard/list_pemesanan'); ?>">List Pemesanan</a>
+                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/list_pemesanan'); ?>">List Pemesanan</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#customers_drp">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#user_drp">
                                 <span class="feather-icon"><i data-feather="zap"></i></span>
-                                <span class="nav-link-text">Customers</span>
+                                <span class="nav-link-text">User</span>
                             </a>
-                            <ul id="customers_drp" class="nav flex-column collapse collapse-level-1">
+                            <ul id="user_drp" class="nav flex-column collapse collapse-level-1">
+														    <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/customer/customer'); ?>">List User</a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/Dashboard/tagihan_harga'); ?>">Tagihan Harga</a>
+                                            <a class="nav-link" href="<?= site_url('admin/customer/customer/tagihan_harga'); ?>">Tagihan Harga</a>
                                         </li>
                                     </ul>
                                 </li>

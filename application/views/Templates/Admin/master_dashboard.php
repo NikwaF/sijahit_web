@@ -58,9 +58,11 @@ License: You must have a valid license purchased only from templatemonster to le
 
     </div>
     <!-- /HK Wrapper -->
-
-		<?php $this->load->view('Templates/Admin/js'); ?>
+		<!-- Modal -->
+		
+		
     <!-- jQuery -->
+		<?php $this->load->view('Templates/Admin/js'); ?>
     
 	
 </body>
