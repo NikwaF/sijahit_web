@@ -16,7 +16,7 @@
     <link href="<?= base_url('assets/brunette/'); ?>vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
 	
 	<!-- Toastr CSS -->
-    <link href="<?= base_url('assets/brunette/'); ?>vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
+    <!--  <link href="<?= base_url('assets/brunette/'); ?>vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"> -->
 
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/brunette/'); ?>dist/css/style.css" rel="stylesheet" type="text/css">
