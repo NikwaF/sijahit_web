@@ -28,28 +28,28 @@ class Login_customer extends REST_Controller{
 					$this->response([
 						'kode' => '1',
 						'pesan' => 'Sukses Login user'
-					],HTTP_OK);	
+					]);//,HTTP_OK);	
 				}
 				
 				if($cekEmailnya[0]['id_roles'] == 2){
 					$this->response([
 						'kode' => '4',
 						'pesan' => 'Sukses Login selamat bekerja'
-					],HTTP_OK);						
+					]);//,HTTP_OK);						
 				}								
 				
 			} else {
 			$this->response([
 				'kode' => '2',
 				'pesan' => 'password anda salah, coba login lagi'
-			],HTTP_NOT_FOUND);				
+			]);//,HTTP_NOT_FOUND);				
 			}
 			
 		} else {
 			$this->response([
 				'kode' => '3',
 				'pesan' => 'anda belum terdaftar, silahkan mendaftar dulu'
-			],HTTP_NOT_FOUND);
+			]);//,HTTP_NOT_FOUND);
 		}
 	}
 }
