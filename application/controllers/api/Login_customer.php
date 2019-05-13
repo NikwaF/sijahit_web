@@ -27,7 +27,8 @@ class Login_customer extends REST_Controller{
 				if($cekEmailnya[0]['id_roles'] == 1){
 					$this->response([
 						'kode' => '1',
-						'pesan' => 'Sukses Login user'
+            'pesan' => 'Sukses Login user',
+            'data' => ['id' => $cekEmailnya[0]['id_customer']  , 'nama' => $cekEmailnya[0]['nama_customer']  , 'email' => $cekEmailnya[0]['email'] , 'no_hp' => $cekEmailnya[0]['no_hp']]
 					]);//,HTTP_OK);	
 				}
 				
