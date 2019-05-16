@@ -19,3 +19,11 @@ function adminLoggedIn(){
     return FALSE;
   }
 }
+
+function rupiah($angka){
+	$CI = get_instance();
+	
+	$hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+	return $hasil_rupiah;
+ 
+}
