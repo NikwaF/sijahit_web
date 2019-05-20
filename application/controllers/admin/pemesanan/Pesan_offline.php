@@ -17,7 +17,7 @@ class Pesan_offline extends CI_Controller
 		if(adminLoggedIn()){
 			$data = [
 				'isinya' => 'Admin/Dashboard/pemesanan/pesan_offline',
-				'data_offline' => $this->pesanoffline->getoffline()
+				'data_offline' => $this->pesan_offline->getoffline()
 			];
 			$this->load->view('Templates/Admin/master_dashboard',$data);
 		} else {
