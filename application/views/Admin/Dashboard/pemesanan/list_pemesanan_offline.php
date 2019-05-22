@@ -8,6 +8,12 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <section class="hk-sec-wrapper">
+                            <?php if($this->session->flashdata('kunci')): ?>
+        <div class="alert <?= $this->session->flashdata('kunci'); ?> alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?=' <p class="text-center">'.$this->session->flashdata('pesan').'</p>' ?>
+            </div>
+         <?php endif; ?>
                             <h5 class="hk-sec-title">List Kategori</h5>
                             <div class="row">
                                 <div class="col-sm">

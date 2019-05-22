@@ -113,7 +113,7 @@
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
                             <div class="media-body">
-                                <span>Madelyn Shane<i class="zmdi zmdi-chevron-down"></i></span>
+                                <span><?= $this->session->userdata('$session_login'); ?><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                     </a>

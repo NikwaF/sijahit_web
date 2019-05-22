@@ -16,7 +16,19 @@ class Pesan_offline extends CI_Controller
 	{
 		if(adminLoggedIn()){
 			$data = [
-				'isinya' => 'Admin/Dashboard/pemesanan/pesan_offline',
+				'isinya' => 'Admin/Dashboard/pemesanan/pesan_offline'
+			];
+			$this->load->view('Templates/Admin/master_dashboard',$data);
+		} else {
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
+
+	public function list_pemesanan_offline()
+	{
+		if(adminLoggedIn()){
+			$data = [
+				'isinya' => 'Admin/Dashboard/pemesanan/list_pemesanan_offline',
 				'data_offline' => $this->pesan_offline->getoffline()
 			];
 			$this->load->view('Templates/Admin/master_dashboard',$data);
@@ -37,7 +49,7 @@ class Pesan_offline extends CI_Controller
 		];
 
 		if ($this->pesan_offline->tambah($data)) {
-			setFlashData('alert-inv alert-inv-success','Data berhasil ditambahkan','admin/pemesanan/list_pemesanan_offline');
+			setFlashData('alert-inv alert-inv-success','Data berhasil ditambahkan','admin/pemesanan/pesan_offline/list_pemesanan_offline');
 		}
 	}
 }

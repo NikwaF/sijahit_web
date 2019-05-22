@@ -44,7 +44,7 @@
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline'); ?>">Tambah Pesan Offline</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/list_pemesanan_offline'); ?>">List Pesan Offline</a>
+                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline/list_pemesanan_offline'); ?>">List Pesan Offline</a>
                                         </li>
                                     </ul>
                                 </li>

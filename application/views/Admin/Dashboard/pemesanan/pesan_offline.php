@@ -11,7 +11,7 @@
                             <p class="mb-25">Silahkan Input pesanan offline.</p>
                             <div class="row">
                                 <div class="col-sm">
-                                    <form action="<?= site_url('admin/pemesan/pesan_offline/tambah_data_action') ?>" method="POST">
+                                    <form action="<?= site_url('admin/pemesanan/pesan_offline/tambah_data_action') ?>" method="POST">
                                         <div class="row">
                                             <div class="form-group col-md-7">
                                                 <label for="firstName">Nama Pemesan</label>
