@@ -14,17 +14,17 @@
                                     <form action="<?= site_url('admin/pemesanan/pesan_offline/tambah_data_action') ?>" method="POST">
                                         <div class="row">
                                             <div class="form-group col-md-7">
-                                                <label for="firstName">Nama Pemesan</label>
+                                                <label for="namapemesan">Nama Pemesan</label>
                                                 <input class="form-control" name="namapemesan" placeholder="" value="" type="text">
                                             </div>
                                             <div class="col-md-5">
-                                                <label for="lastName">Taggal Minta Selesai</label>
-                                                <input class="form-control" type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+                                                <label for="tanggal_minta">Taggal Minta Selesai</label>
+                                                <input class="form-control" type="text" name="date" />
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-7">
-                                                <label for="firstName">Alamat Pemesan</label>
+                                                <label for="alamat">Alamat Pemesan</label>
                                                 <input class="form-control" name="alamat" placeholder="" value="" type="text">
                                             </div>
                                         </div>
@@ -43,6 +43,12 @@
                                                     <option value="dewasa">Dewasa</option>
                                                 </select>
                                         </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-7">
+                                                <label for="deskripsi">Detail Ukuran</label>
+                                                <textarea class="form-control" rows="3" placeholder="" name="detail_ukuran"></textarea>
+                                            </div>
                                         </div>
 										<hr>
                                         <button class="btn btn-primary" type="submit">Tambah Pesanan</button>

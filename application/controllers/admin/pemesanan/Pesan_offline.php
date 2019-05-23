@@ -45,8 +45,9 @@ class Pesan_offline extends CI_Controller
 			'nama_pemesan' => $input['namapemesan'],
 			'alamat_pemesan' => $input['alamat'],
 			'no_hp' => $input['nohppemesan'],
-			'tanggal_minta' => $input['tanggal'],
-			'ukuran' => $input['ukuran']
+			'tanggal_minta' => $input['date'],
+			'ukuran' => $input['ukuran'],
+			'detail_ukuran' => $input['detail_ukuran']
 		];
 
 		if ($this->pesan_offline->tambah($data)) {
