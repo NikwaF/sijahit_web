@@ -26,6 +26,7 @@ class Pesan_offline extends CI_Controller
 
 	public function list_pemesanan_offline()
 	{
+
 		if(adminLoggedIn()){
 			$data = [
 				'isinya' => 'Admin/Dashboard/pemesanan/list_pemesanan_offline',
@@ -51,5 +52,13 @@ class Pesan_offline extends CI_Controller
 		if ($this->pesan_offline->tambah($data)) {
 			setFlashData('alert-inv alert-inv-success','Data berhasil ditambahkan','admin/pemesanan/pesan_offline/list_pemesanan_offline');
 		}
+	}
+
+	public function ahay(){
+		$model = $this->load->model('admin/pemesanan/pesanoffline_mdl');
+		$result = $this->pesan_offline->jumlah_offline()->result();
+
+		// var_dump($result);
+		echo $result[0]->halo;
 	}
 }

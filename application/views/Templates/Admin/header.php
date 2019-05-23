@@ -20,3 +20,5 @@
 
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/brunette/'); ?>dist/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Daterangepicker CSS -->
+    <link href="<?= base_url('assets/brunette/'); ?>vendors/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />

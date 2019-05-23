@@ -48,3 +48,8 @@
     <!-- Init JavaScript -->
     <script src="<?= base_url('assets/brunette/') ;?>dist/js/init.js"></script>
 	<script src="<?= base_url('assets/brunette/') ;?>dist/js/dashboard4-data.js"></script>
+
+    <!-- Daterangepicker JavaScript -->
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/moment/min/moment.min.js"></script>
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="<?= base_url('assets/brunette/') ;?>dist/js/daterangepicker-data.js"></script>

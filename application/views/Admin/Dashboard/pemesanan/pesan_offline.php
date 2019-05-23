@@ -17,9 +17,9 @@
                                                 <label for="firstName">Nama Pemesan</label>
                                                 <input class="form-control" name="namapemesan" placeholder="" value="" type="text">
                                             </div>
-                                            <div class="col-md-5 form-group">
+                                            <div class="col-md-5">
                                                 <label for="lastName">Taggal Minta Selesai</label>
-                                                <input class="form-control" id="hargamax" name="tanggal" placeholder="" value="" type="number">
+                                                <input class="form-control" type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
                                             </div>
                                         </div>
                                         <div class="row">
@@ -44,9 +44,9 @@
                                                 </select>
                                         </div>
                                         </div>
-																				<hr>
+										<hr>
                                         <button class="btn btn-primary" type="submit">Tambah Pesanan</button>
-																		</form>
+									</form>
                                 </div>
                             </div>
 						</section>
