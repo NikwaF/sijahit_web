@@ -47,4 +47,5 @@
     
     <!-- Init JavaScript -->
     <script src="<?= base_url('assets/brunette/') ;?>dist/js/init.js"></script>
-	<script src="<?= base_url('assets/brunette/') ;?>dist/js/dashboard4-data.js"></script>
+	<!-- <script src="<?= base_url('assets/brunette/') ;?>dist/js/dashboard4-data.js"></script> -->
+	<script src="<?= base_url('assets/brunette/') ;?>dist/js/custom_js.js"></script>

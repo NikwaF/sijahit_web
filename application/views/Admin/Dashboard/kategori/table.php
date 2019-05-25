@@ -17,20 +17,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>Nama_kategori</th>
-                                                    <th>Ukuran</th>
-                                                    <th>Range Harga</th>
-                                                    <th>Action</th>
+                                                    <th>Detail</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-																						<?php foreach($data_kategori as $info): ?>
-                                                <tr>
-                                                    <td><?= $info['nama_kategori'];?></td>
-                                                    <td><?=$info['ukuran'];?></td>
-                                                    <td><?=rupiah($info['harga_min']) ." - " .rupiah($info['harga_max'])?></td>
-                                                    <td><button class="btn btn-primary" style="color:#fff" data-toggle="modal" data-target=""></button></td>
-                                                </tr>
-																						<?php endforeach; ?>
+																						
                                             </tbody>
                                         </table>
                                     </div>

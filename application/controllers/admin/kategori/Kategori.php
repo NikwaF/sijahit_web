@@ -52,4 +52,35 @@ class Kategori extends CI_Controller{
 		}
 	}
 	
+	public function insert_tipe(){
+		if(adminLoggedIn()){
+			$data = ['nama_tipe' => $this->input->post('nama_tipe')];
+			
+			$insert = $this->kategori->add_tipe($data);
+			echo($insert);
+		}
+	  else {
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	
+	}
+	
+	public function getTipe(){
+			$datanya = $this->kategori->gettipe();
+			echo json_encode($datanya);		
+	}
+	
+	public function getUkuranTipe(){
+			$datanya = $this->kategori->getukurantipe();
+			echo json_encode($datanya);		
+	}
+	
+	public function ihaa(){
+		echo json_encode($this->input->post());
+	}
+	
+	// public function ahay(){
+		// $datanya = $this->kategori->getTipename();
+		// var_dump($datanya);
+	// }
 }

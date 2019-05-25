@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<!-- 
-Template Name: Brunette - Responsive Bootstrap 4 Admin Dashboard Template
-Author: Hencework
-Contact: https://hencework.ticksy.com/
-
-License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
--->
-<html lang="en">
 
 <head>
   <?php $this->load->view('Templates/Admin/header'); ?>
