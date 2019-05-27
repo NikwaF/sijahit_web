@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 25, 2019 at 04:35 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Host: localhost
+-- Generation Time: May 27, 2019 at 09:02 PM
+-- Server version: 10.3.14-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -55,7 +55,7 @@ CREATE TABLE `alamat_customer` (
   `kelurahan` varchar(30) NOT NULL,
   `kode_pos` varchar(10) NOT NULL,
   `detail_alamat` text NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -114,6 +114,18 @@ CREATE TABLE `kategori` (
   `harga_max` int(255) NOT NULL,
   `id_ukuran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `id_tipe`, `harga_min`, `harga_max`, `id_ukuran`) VALUES
+(5, 1, 30000, 50000, 1),
+(6, 1, 60000, 65000, 2),
+(7, 1, 70000, 77000, 3),
+(8, 2, 30000, 50000, 1),
+(9, 2, 70000, 90000, 2),
+(10, 2, 100000, 120000, 3);
 
 -- --------------------------------------------------------
 
@@ -247,7 +259,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `kategori_tipe`

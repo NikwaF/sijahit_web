@@ -17,49 +17,56 @@
                                                 <input class="form-control" name="namatipe" id="namatipe" placeholder="" value="" type="text">
                                             </div>
                                         </div>
-																				<hr>
+                                        <hr>customer
                                         <button id="simpan_nama_tipe" class="btn btn-primary" >Simpan Data</button>
                                 </div>
                             </div>
-												</section>
-										</div>
-										<div class="col-xl-8">
+                        </section>
+                    </div>
+                    <div class="col-xl-8">
                         <section class="hk-sec-wrapper">
                             <h5 class="hk-sec-title d-inline-block">Ukuran dan Range Harga</h5>
-														<a id="btn_tambah" class="btn btn-primary float-right" style="color:#fff;" >Tambah Form</a>
-														<div class="clearfix"></div>
+                            <a id="btn_tambah" class="btn btn-primary float-right" style="color:#fff;" >Tambah Form</a>
+                            <div class="clearfix"></div>
                             <p class="mb-25">Silahkan Ukuran dan Range Harga.</p>
                             <div class="row">
                                <div class="col-sm">
                                     <form id="form_tambahnya">
-																				<div id="formnya">
-																						<div class="row">
-																							<div class="form-group col-md-12">
-																									<label for="firstName">Tipe Kategori</label>
-																									<select class="form-control custom-select d-block w-100" name="tipe_kategori" id="pilihan_tipe">
-																									</select>
-																							</div>
-																							<div class="form-group col-md-12">
-																									<label for="firstName">Ukuran</label>
-																									<select class="form-control custom-select d-block w-100" name="tipe_ukuran[]" id="pilihan_ukuran_tipe" placeholder="Pilih Ukuran">
-																									</select>
-																							</div>
-																						</div>
-																						<div class="row">
-																							<div class="col-md-6 form-group">
-																									<label for="firstName">Harga Minimal</label>
-																									<input class="form-control" id="hargamin" name="hargamin[]" placeholder="" value="" type="number">
-																							</div>
-																							<div class="col-md-6 form-group">
-																									<label for="lastName">Harga Maximal</label>
-																									<input class="form-control" id="hargamax" name="hargamax[]" placeholder="" value="" type="number">
-																							</div>
-																						</div>
-																				</div>
+                                        <div id="formnya">
+                                            <div class="row">
+                                              <div class="form-group col-md-12">
+                                                  <label for="firstName">Tipe Kategori</label>
+                                                  <select class="form-control custom-select d-block w-100" name="tipe_kategori" id="pilihan_tipe">
+                                                  </select>
+                                              </div>
+                                              <div class="form-group col-md-12">
+                                                  <label for="firstName">Ukuran</label>
+                                                  <select class="form-control custom-select d-block w-100" name="tipe_ukuran[]" id="pilihan_ukuran_tipe" placeholder="Pilih Ukuran">
+<?php foreach($dataUkuran as $ukuran) : ?>
+<option value="<?= $ukuran['id_ukuran_kategori']; ?>"><?= $ukuran['nama_ukuruan'];?></option>
+<?php endforeach; ?> 
+<script>
+var halo = <?php echo json_encode($dataUkuran); ?>;
+console.log(halo);
+</script>
+                                                  </select>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-md-6 form-group">
+                                                  <label for="firstName">Harga Minimal</label>
+                                                  <input class="form-control" id="hargamin" name="hargamin[]" placeholder="" value="" type="number">
+                                              </div>
+                                              <div class="col-md-6 form-group">
+                                                  <label for="lastName">Harga Maximal</label>
+                                                  <input class="form-control" id="hargamax" name="hargamax[]" placeholder="" value="" type="number">
+                                              </div>
+                                            </div>
+                                        </div>
                                         <a class="btn btn-primary" id="simpan_kategori" >Simpan Data</a>
-																</div>
-																		</form>
+                                </div>
+                                    </form>
                             </div>
-												</section>
+                        </section>
                     </div>		
-								</div>
+                </div>

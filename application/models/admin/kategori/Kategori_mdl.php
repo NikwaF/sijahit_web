@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 class Kategori_mdl extends CI_Model{
 	
 	public function getKategori(){
@@ -23,5 +21,8 @@ class Kategori_mdl extends CI_Model{
 	public function getukurantipe(){
 		return $this->db->get('kategori_ukuran')->result_array();
 	}
-	
+
+  public function insert_kategori($data){
+    return $this->db->insert('kategori',$data);
+  }
 }
