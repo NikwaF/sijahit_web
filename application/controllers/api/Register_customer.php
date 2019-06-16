@@ -37,22 +37,22 @@ class Register_customer extends REST_Controller{
 		
 		if(sizeof($cekEmail) > 0 ){
 			$this->response([
-				'status' => false,
+				'status' => 0,
 				'pesan' => 'email sudah pernah dipakai'
-			],HTTP_BAD_REQUEST);			
+			]);//,HTTP_BAD_REQUEST);			
 		} else {
 			$registercoy = $this->reg->register($customer,$alamat);
 			
 			if(!$registercoy){
 				$this->response([
-					'status' => false,
+					'status' => 1,
 					'pesan' => 'registrasi gagal'
-				],HTTP_BAD_REQUEST);
+				]); //,HTTP_BAD_REQUEST);
 			} else {
 				$this->response([
-					'status' => true,
+					'status' => 2,
 					'pesan' => 'registrasi user berhasil'
-				], REST_Controller::HTTP_CREATED);
+				]);//, REST_Controller::HTTP_CREATED);
 			}			
 		}
 	}

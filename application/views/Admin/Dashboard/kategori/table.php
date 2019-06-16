@@ -16,21 +16,27 @@
                                         <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
-                                                    <th>Nama_kategori</th>
-                                                    <th>Ukuran</th>
-                                                    <th>Range Harga</th>
+                                                    <th>No.</th>
+                                                    <th>Nama kategori</th>
+                                                    <th>Tipe</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-																						<?php foreach($data_kategori as $info): ?>
-                                                <tr>
-                                                    <td><?= $info['nama_kategori'];?></td>
-                                                    <td><?=$info['ukuran'];?></td>
-                                                    <td><?=rupiah($info['harga_min']) ." - " .rupiah($info['harga_max'])?></td>
-                                                    <td><button class="btn btn-primary" style="color:#fff" data-toggle="modal" data-target=""></button></td>
-                                                </tr>
-																						<?php endforeach; ?>
+													<td style="width:5%;">.</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="text-center" width="300px">
+                                                        <a href="<?= site_url('admin/kategori/kategori/view') ?>" class="btn btn-info btn-sm">
+                                                            <i class="fa fa-pencil"></i>View
+                                                        </a>
+                                                        <a href="" class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-pencil"></i>Update
+                                                        </a>
+                                                        <a href="" onclick="return confirm('Apakah yakin hapus data?')" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-trash"></i>Delete
+                                                        </a>
+                                                    </td>									
                                             </tbody>
                                         </table>
                                     </div>

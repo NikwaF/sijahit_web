@@ -16,7 +16,7 @@
                         </li>
 												<li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#masterdrp">
-                                <span class="feather-icon"><i data-feather="layout"></i></span>
+                                <span class="feather-icon"><i data-feather="hard-drive"></i></span>
                                 <span class="nav-link-text">Master Data</span>
                             </a>
                             <ul id="masterdrp" class="nav flex-column collapse collapse-level-1">
@@ -31,7 +31,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#pemesanan_drp">
-                                <span class="feather-icon"><i data-feather="layout"></i></span>
+                                <span class="feather-icon"><i data-feather="clipboard"></i></span>
                                 <span class="nav-link-text">Pemesanan</span>
                             </a>
                             <ul id="pemesanan_drp" class="nav flex-column collapse collapse-level-1">
@@ -45,6 +45,36 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline/list_pemesanan_offline'); ?>">List Pesan Offline</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#laporan_drp">
+                                <span class="feather-icon"><i data-feather="archive"></i></span>
+                                <span class="nav-link-text">Laporan</span>
+                            </a>
+                            <ul id="laporan_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/laporan/laporan'); ?>">List Laporan</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#resi_drp">
+                                <span class="feather-icon"><i data-feather="layers" class="fas fa-boxes"></i>"></i></span>
+                                <span class="nav-link-text">Resi</span>
+                            </a>
+                            <ul id="resi_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/resi/resi'); ?>">Track Pengerjaan</a>
                                         </li>
                                     </ul>
                                 </li>
