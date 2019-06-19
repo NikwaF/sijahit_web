@@ -21,8 +21,23 @@
 																					 </div>
 																					 <div class="form-group col-md-6">
 																							 <label for="firstName">Tanggal Request</label>
-																							 <input class="form-control" type="text" name="birthday" value="10/24/1984" />
+																							 <input class="form-control" type="text" name="reqtanggal" autocomplete="off" value="" />
+																						<script>
+$(function() {
+  $('input[name="reqtanggal"]').daterangepicker({
+		locale: {
+			format : 'DD-MM-YYYY'
+		},
+    singleDatePicker: true,
+    showDropdowns: true
+  }, function(start, end, label) {
+    // alert(start.format('YYYY-MM-DD'));
+		$('input[name="reqtanggal"]').val(start.format('YYYY-MM-DD'));
+  });
+});
+</script>
 																					 </div>
+
 																					 <div class="form-group col-md-6">
 																							<label for="Kategori">Kategori Barang</label>
 																							<select class="form-control custom-select d-block w-100" name="">
@@ -115,3 +130,5 @@
 											 </section>
 									 </div>
 							 </div>
+
+

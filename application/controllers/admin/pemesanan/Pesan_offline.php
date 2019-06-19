@@ -58,6 +58,5 @@ class Pesan_offline extends CI_Controller
 
 		// var_dump($result);
 		echo $result[0]->halo;
-	}
-	
+	}	
 }
