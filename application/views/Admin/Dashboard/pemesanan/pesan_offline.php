@@ -74,7 +74,7 @@ $(function() {
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Lebar Dada</label>
-																								<input class="form-control" type="text" name="birthday" value="" />
+																								<input class="form-control" type="text" name="" value="" />
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Lingkar Pinggang</label>
@@ -86,7 +86,7 @@ $(function() {
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Lingkar Lengan</label>
-																								<input class="form-control" type="text" name="birthday" value="" />
+																								<input class="form-control" type="text" name="" value="" />
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Lingkar Pinggul</label>
@@ -98,7 +98,7 @@ $(function() {
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Lingkar Celana</label>
-																								<input class="form-control" type="text" name="birthday" value="" />
+																								<input class="form-control" type="text" name="" value="" />
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Lingkar Paha</label>
@@ -110,7 +110,7 @@ $(function() {
 																						</div>
 																						<div class="form-group col-md-4">
 																								<label for="firstName">Panjang Punggung</label>
-																								<input class="form-control" type="text" name="birthday" value="" />
+																								<input class="form-control" type="text" name="" value="" />
 																						</div>
 																						<div class="form-group col-md-12">
 																								<label for="firstName">Jenis Kelamin Pesanan</label>
