@@ -8,13 +8,13 @@
                         <span>UI</span>
                     </div>
                     <ul class="navbar-nav flex-column">
-										   <li class="nav-item">
+						<li class="nav-item">
                             <a class="nav-link" href="<?= site_url('admin/Dashboard'); ?>" >
                                 <span class="feather-icon"><i data-feather="book"></i></span>
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
                         </li>
-												<li class="nav-item">
+						<li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#masterdrp">
                                 <span class="feather-icon"><i data-feather="hard-drive"></i></span>
                                 <span class="nav-link-text">Master Data</span>
@@ -24,6 +24,13 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/kategori/kategori'); ?>">Kategori</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/kodepos/kode_pos'); ?>">Kode Pos</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -38,6 +45,9 @@
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc'); ?>">Pesanan Menunggu Acc</a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/list_pemesanan'); ?>">List Pemesanan</a>
                                         </li>
                                         <li class="nav-item">
@@ -46,6 +56,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline/list_pemesanan_offline'); ?>">List Pesan Offline</a>
                                         </li>
+                                        
                                     </ul>
                                 </li>
                             </ul>
@@ -104,31 +115,6 @@
                         </li>
                     </ul>
                     <hr class="nav-separator">
-                    <div class="nav-header">
-                        <span>Getting Started</span>
-                        <span>GS</span>
-                    </div>
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="documentation.html" >
-                                <span class="feather-icon"><i data-feather="book"></i></span>
-                                <span class="nav-link-text">Documentation</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-with-badge" href="#">
-                                <span class="feather-icon"><i data-feather="eye"></i></span>
-                                <span class="nav-link-text">Changelog</span>
-                                <span class="badge badge-sm badge-success badge-pill">v 1.0</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span class="feather-icon"><i data-feather="headphones"></i></span>
-                                <span class="nav-link-text">Support</span>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>

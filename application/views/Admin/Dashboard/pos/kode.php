@@ -1,6 +1,6 @@
  <!-- Title -->
                 <div class="hk-pg-header">
-                    <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Tables</h4>
+                    <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Kode Pos</h4>
                 </div>
                 <!-- /Title -->
 
@@ -8,37 +8,37 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <section class="hk-sec-wrapper">
-                            <h5 class="hk-sec-title">List Pemesanan</h5>
+                            <h5 class="hk-sec-title">List Ongkir</h5>
                             <div class="row">
                                 <div class="col-sm">
+                                    <a class="btn btn-primary mb-10" href="<?= site_url('admin/kodepos/kode_pos/tambah_data') ?>">Tambah</a>
                                     <div class="table-wrap">
                                         <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
-                                                    <th>Kode Barang</th>
-                                                    <th>Nama Pemesan</th>
-                                                    <th>Tanggal Masuk Pesanan</th>
-                                                    <th>Tanggal Minta</th>
-                                                    <th>Method Order</th>
+                                                    <th>No</th>
+                                                    <th>Kode Pos</th>
+                                                    <th>Harga</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php $no = 1;
+                                                foreach ($data_pos as $data) { ?>
                                                 <tr>
-                                                    <td>JHT00011</td>
-                                                    <td>Willian</td>
-                                                    <td>2019/04/04</td>
-                                                    <td>2019/04/25</td>
-                                                    <td>Online</td>
-                                                    <td>
+                                                    <td style="width:5%;"><?= $no++ ?></td>
+                                                    <td><?= $data->kode_pos ?></td>
+                                                    <td><?= $data->harga ?></td>
+                                                    <td class="text-center" width="300px">
                                                         <a href="<?= site_url('admin/pemesanan/list_pemesanan/resi') ?>" class="btn btn-info btn-sm">
-                                                            <i class="fa fa-pencil"></i>Update Resi
+                                                            <i class="fa fa-pencil"></i>Update
                                                         </a>
                                                         <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-secondary btn-sm">
-                                                            <i class="fa fa-pencil"></i>Detail
+                                                            <i class="fa fa-pencil"></i>Delete
                                                         </a>
                                                     </td>
-                                                </tr>    
+                                                </tr> 
+                                                <?php } ?>   
                                             </tbody>
                                         </table>
                                     </div>

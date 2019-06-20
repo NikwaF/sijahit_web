@@ -31,11 +31,11 @@
                                                     <td>2019/04/25</td>
                                                     <td>Online</td>
                                                     <td>
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/resi') ?>" class="btn btn-info btn-sm">
-                                                            <i class="fa fa-pencil"></i>Update Resi
+                                                        <a href="" class="btn btn-success btn-rounded btn-sm">
+                                                            <i class="fa fa-pencil"></i>Terima
                                                         </a>
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-secondary btn-sm">
-                                                            <i class="fa fa-pencil"></i>Detail
+                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-danger btn-rounded btn-sm">
+                                                            <i class="fa fa-close"></i>Tolak
                                                         </a>
                                                     </td>
                                                 </tr>    
