@@ -24,5 +24,13 @@ class Kategori_mdl extends CI_Model{
 
   public function insert_kategori($data){
     return $this->db->insert('kategori',$data);
-  }
+	}
+	
+	public function kategori_join(){
+		$this->db->select('*');
+		$this->db->from('kategori');
+		$this->db->join('kategori_tipe','kategori.id_tipe = kategori_tipe.id_kategori_tipe','inner');
+		$this->db->join('kategori_ukuran','kategori.id_ukuran = kategori_ukuran.id_kategori_ukuran','inner');
+		return $this->db->get()->result_array();
+	}
 }

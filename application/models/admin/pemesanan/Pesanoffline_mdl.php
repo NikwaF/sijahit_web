@@ -1,6 +1,5 @@
 <?php
 
-
 class Pesanoffline_mdl extends CI_Model{
 
 	public function getoffline(){
@@ -15,5 +14,13 @@ class Pesanoffline_mdl extends CI_Model{
 
 	}
 
+	public function getKodePemesanan(){
+		$this->db->select('kode_pemesanan');
+		return $this->db->get('pemesanan')->result_array();
+	}
 
+	public function getIdPemesananDetail(){
+		$this->db->select('id_detail_pesanan');
+		return $this->db->get('pemesanan_detail')->result_array();
+	}
 }
