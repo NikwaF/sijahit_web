@@ -15,12 +15,19 @@
                                         <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
+
                                                     <th>Kode Barang</th>
                                                     <th>Nama Pemesan</th>
                                                     <th>Tanggal Masuk Pesanan</th>
                                                     <th>Tanggal Minta</th>
                                                     <th>Method Order</th>
                                                     <th>Action</th>
+                                                    <th>ID Pemesanan</th>
+                                                    <th>Method</th>
+                                                    <th>Nama Customer</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Detail Pesanan</th>
+                                                    <th>Acc Ga?</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -38,7 +45,38 @@
                                                             <i class="fa fa-pencil"></i>Detail
                                                         </a>
                                                     </td>
-                                                </tr>    
+                                                </tr> 
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td><a class="btn btn-primary">detail pesanan</a></td>
+                                                    <td><a class="btn btn-primary mr-3">Terima</a><a class="btn btn-primary">Tolak</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td><a class="btn btn-primary">detail pesanan</a></td>
+                                                    <td><a class="btn btn-primary mr-3">Terima</a><a class="btn btn-primary">Tolak</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td><a class="btn btn-primary">detail pesanan</a></td>
+                                                    <td><a class="btn btn-primary mr-3">Terima</a><a class="btn btn-primary">Tolak</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td><a class="btn btn-primary">detail pesanan</a></td>
+                                                    <td><a class="btn btn-primary mr-3">Terima</a><a class="btn btn-primary">Tolak</a></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -47,6 +85,4 @@
                         </section>
 					</div>
                 </div>
-
-
-                
+</div>

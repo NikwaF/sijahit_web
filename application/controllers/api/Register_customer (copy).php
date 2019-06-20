@@ -18,20 +18,19 @@ class Register_customer extends REST_Controller{
 		$customer = array (
 			'nama_customer' => $post['nama'],
 			'no_hp' => $post['no_hp'],
-			'on_or_off' => 1,
+			'email' => $post['email'],
+			'password' => password_hash($post['password'], PASSWORD_DEFAULT),
+			'id_roles' => 1,
 			'date_created' => date('Y-m-d H:i:s')
 		);
 
-		$account = array(
-			'email' => $post['email'],
-			'password' => password_hash($post['password'], PASSWORD_DEFAULT),
-		);
-
 		$alamat = array (
-			'kelurahan' => $post['kelurahan'],
+			'desa' => $post['desa'],
 			'kecamatan' => $post['kecamatan'],
+			'kelurahan' => $post['kelurahan'],
 			'kode_pos' => $post['kode_pos'],
-			'detail_alamat' => $post['detail_alamat']
+			'detail_alamat' => $post['detail_alamat'],
+			'date_created' => date('Y-m-d H:i:s')
 		);
 
 		$cekEmail = $this->reg->get_user($halo = array('email' => $post['email']));
@@ -42,7 +41,7 @@ class Register_customer extends REST_Controller{
 				'pesan' => 'email sudah pernah dipakai'
 			]);//,HTTP_BAD_REQUEST);
 		} else {
-			$registercoy = $this->reg->register($customer,$alamat,$account);
+			$registercoy = $this->reg->register($customer,$alamat);
 
 			if(!$registercoy){
 				$this->response([

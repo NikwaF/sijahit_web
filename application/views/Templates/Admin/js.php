@@ -1,8 +1,6 @@
-<script src="<?= base_url('assets/brunette/') ;?>vendors/jquery/dist/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?= base_url('assets/brunette/') ;?>vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="<?= base_url('assets/brunette/') ;?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  
 
     <!-- Slimscroll JavaScript -->
     <script src="<?= base_url('assets/brunette/') ;?>dist/js/jquery.slimscroll.js"></script>
@@ -31,6 +29,8 @@
     <!-- Toggles JavaScript -->
     <script src="<?= base_url('assets/brunette/') ;?>vendors/jquery-toggles/toggles.min.js"></script>
     <script src="<?= base_url('assets/brunette/') ;?>dist/js/toggle-data.js"></script>
+
+
 	
 	<!-- Counter Animation JavaScript -->
 	<script src="<?= base_url('assets/brunette/') ;?>vendors/waypoints/lib/jquery.waypoints.min.js"></script>
@@ -47,6 +47,7 @@
     
     <!-- Init JavaScript -->
     <script src="<?= base_url('assets/brunette/') ;?>dist/js/init.js"></script>
+<<<<<<< HEAD
 
 	<script src="<?= base_url('assets/brunette/') ;?>dist/js/dashboard4-data.js"></script>
 
@@ -58,3 +59,7 @@
 	<script src="<?= base_url('assets/brunette/') ;?>dist/js/dashboard4-data.js"></script> 
 	<script src="<?= base_url('assets/brunette/') ;?>dist/js/custom_js.js"></script>
 
+=======
+	<!-- <script src="<?= base_url('assets/brunette/') ;?>dist/js/dashboard4-data.js"></script> -->
+	<script src="<?= base_url('assets/brunette/') ;?>dist/js/custom_js.js"></script>
+>>>>>>> d32dcdd825fba954ca80c1caecdb925a7683a6b6

@@ -56,7 +56,10 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline/list_pemesanan_offline'); ?>">List Pesan Offline</a>
                                         </li>
+<<<<<<< HEAD
                                         
+=======
+>>>>>>> d32dcdd825fba954ca80c1caecdb925a7683a6b6
                                     </ul>
                                 </li>
                             </ul>
@@ -114,7 +117,10 @@
                             </ul>
                         </li>
                     </ul>
+<<<<<<< HEAD
                     <hr class="nav-separator">
+=======
+>>>>>>> d32dcdd825fba954ca80c1caecdb925a7683a6b6
                 </div>
             </div>
         </nav>

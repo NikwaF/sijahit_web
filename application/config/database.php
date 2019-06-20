@@ -76,8 +76,13 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+<<<<<<< HEAD
 	'username' => 'root',
 	'password' => '',
+=======
+	'username' => 'phpmyadmin',
+	'password' => 'niko21',
+>>>>>>> d32dcdd825fba954ca80c1caecdb925a7683a6b6
 	'database' => 'sijahit',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
