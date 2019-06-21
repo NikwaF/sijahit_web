@@ -1,3 +1,4 @@
+
   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Brunette I CRM Dashboard</title>
@@ -20,3 +21,16 @@
 
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/brunette/'); ?>dist/css/style.css" rel="stylesheet" type="text/css">
+
+     <!-- Daterangepicker CSS -->
+    <link href="<?= base_url('assets/brunette/'); ?>vendors/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+
+    
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/jquery/dist/jquery.min.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!-- Daterangepicker JavaScript -->
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/moment/min/moment.min.js"></script>
+    <script src="<?= base_url('assets/brunette/') ;?>vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="<?= base_url('assets/brunette/') ;?>dist/js/daterangepicker-data.js"></script>

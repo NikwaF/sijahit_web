@@ -12,5 +12,10 @@ class Customer_mdl extends CI_Model{
 		$hasilnya = $this->db->get()->result_array();
 		return $hasilnya;
 	}
-	
+
+	public function insert_customer($data){
+		$this->db->insert('customer',$data);
+		$id_customer = $this->db->insert_id();
+		return $id_customer;
+	}
 }
