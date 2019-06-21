@@ -23,4 +23,16 @@ class Pesanoffline_mdl extends CI_Model{
 		$this->db->select('id_detail_pesanan');
 		return $this->db->get('pemesanan_detail')->result_array();
 	}
+
+	public function insert_pemesanan($data){
+		return $this->db->insert('pemesanan',$data);
+	}
+
+	public function insert_pemesanan_detail($data){
+		return $this->db->insert('pemesanan_detail',$data);
+	}
+
+	// public function insert_pemesanan_dan_detail($){
+	// 	return $this->db->insert('pemesanan_detail',$data);
+	// }
 }

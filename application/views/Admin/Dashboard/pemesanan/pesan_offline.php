@@ -3,6 +3,13 @@
 							 </div>
 							 <!-- /Title -->
 
+							                 <?php if($this->session->flashdata('kunci')): ?>
+        <div class="<?= $this->session->flashdata('kunci'); ?> alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?=' <p class="text-center">'.$this->session->flashdata('pesan').'</p>' ?>
+            </div>
+         <?php endif; ?>
+
 							 <!-- Row -->
 							 <div class="row">
 									 <div class="col-xl-12">
@@ -27,7 +34,7 @@
 $(function() {
   $('input[name="reqtanggal"]').daterangepicker({
 		locale: {
-			format : 'DD-MM-YYYY'
+			format : 'YYYY-MM-DD'
 		},
     singleDatePicker: true,
     showDropdowns: true
