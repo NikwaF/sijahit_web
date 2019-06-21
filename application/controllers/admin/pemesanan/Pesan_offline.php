@@ -174,7 +174,8 @@ class Pesan_offline extends CI_Controller
 					$this->upload_gambar();
 
 					if(!$this->upload->do_upload('uploadmodel')){
-						$items['gambar_pesanan'] = 'default.jpg';
+						$error = $this->upload->display_errors();
+						$items['gambar_pesanan'] = $error;
 					} else {
 						$nama_file = $this->upload->data();
 						$items['gambar_pesanan'] = $nama_file['file_name'];
@@ -223,7 +224,13 @@ class Pesan_offline extends CI_Controller
 		// echo(realpath(APPPATH. '../assets/gambar/model_pesanan/'));
 		// echo "gm_".time().".jpg";
 		// $this->session->unset_userdata('gambarnya');
-		unset($_SESSION['pemesanan_detail'][0]);
+		unset($_SESSION['pemesanan_detail']);
+		unset($_SESSION['pemesanan']);
+		unset($_SESSION['nama_pemesan']);
+		unset($_SESSION['id_customer']);
+		unset($_SESSION['id_profile_ukuran']);
+
+
 		
 	}
 
