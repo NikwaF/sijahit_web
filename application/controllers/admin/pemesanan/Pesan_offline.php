@@ -149,7 +149,6 @@ class Pesan_offline extends CI_Controller
 			if(!$this->session->has_userdata('pemesanan')){
 
 				$pemesanan = array(
-					'pemesanan' => array(
 						'kode_pemesanan' => $this->kode_pemesanan(),
 						'id_customer' => $this->session->userdata('id_customer'),
 						'is_accept' => 1,
@@ -158,7 +157,6 @@ class Pesan_offline extends CI_Controller
 						'method_order' => 2,
 						'is_ukur' => 1,
 						'sudah_ditolak' => 0
-					)
 				);
 
 				$_SESSION['pemesanan'] = $pemesanan;
@@ -220,16 +218,12 @@ class Pesan_offline extends CI_Controller
 		return $hitung;
 	}
 
-
-	
-	
-			
-
 	public function halo2(){
 		// echo $this->input->post('kategori');
 		// echo(realpath(APPPATH. '../assets/gambar/model_pesanan/'));
 		// echo "gm_".time().".jpg";
-		session_destroy();
+		// $this->session->unset_userdata('gambarnya');
+		unset($_SESSION['pemesanan_detail'][0]);
 		
 	}
 
