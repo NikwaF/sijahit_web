@@ -27,11 +27,18 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/kode/pos'); ?>">Kode Pos</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#pemesanan_drp">
-                                <span class="feather-icon"><i data-feather="layout"></i></span>
+                                <span class="feather-icon"><i data-feather="clipboard"></i></span>
                                 <span class="nav-link-text">Pemesanan</span>
                             </a>
                             <ul id="pemesanan_drp" class="nav flex-column collapse collapse-level-1">
