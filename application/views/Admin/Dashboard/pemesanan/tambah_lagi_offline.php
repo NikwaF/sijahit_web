@@ -7,12 +7,11 @@
 							 <div class="row">
 									 <div class="col-xl-12">
 											 <section class="hk-sec-wrapper">
-													<form action="<?= site_url('admin/pemesanan/pesan_offline/handlerpesanoffline') ?>" method="post">
+													<form enctype="multipart/form-data" action="<?= site_url('admin/pemesanan/pesan_offline/handlerpesanoffline') ?>" method="post">
 													 <h5 class="hk-sec-title">#<?= $kode_pemesanan; ?></h5>
 													 <div class="row">
 															 <div class="col-sm">
-																					 </div>
-
+																			 <div class="row">
 																					 <div class="form-group col-md-6">
 																							<label for="Kategori">Kategori Barang</label>
 																							<select class="form-control custom-select d-block w-100" name="kategori">
@@ -29,19 +28,23 @@
 																						 <label for="Upload">Upload model Pesanan</label>
 																						 <br>
 																						 <input type="file" name="uploadmodel">
-																						<!-- <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-																								<div class="input-group-prepend">
-																										<span class="input-group-text">Upload</span>
-																								</div>
-																								<div class="form-control text-truncate" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-																								<span class="input-group-append">
-																															 <span class=" btn btn-primary btn-file"><span class="fileinput-new">Pilih file</span><span class="fileinput-exists">Change</span>
-																								<input type="file" name="...">
-																								</span>
-																								<a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
-																								</span>
-																						</div> -->
 																				</div>
+																				<div class="clearfix"></div>
+																					<div class="form-group col-md-12">
+																					<label for="deskripsi">Deskripsi Jahitan</label>
+																					 	<textarea class="form-control mt-15" name="deskripsi_pesanan" rows="3" placeholder="deskripsi pesanannya .."></textarea>
+																					 </div>
+																					 <div class="form-group col-md-3">
+																					 <label for="jumlah">Jumlah Dipesan</label>
+																						<input class="form-control" type="number" placeholder="jumlahnya .." name="jumlah" min="1">
+																					 </div>
+																					 			<div class="form-group col-md-9">
+																								<label for="firstName">Jenis Kelamin Jahitan</label>
+																								<select class="form-control custom-select d-block w-100" name="jenis_kelamin">
+																									<option value="laki-laki">Laki-laki</option>
+																									<option value="perempuan">Perempuan</option>
+																								</select>
+																						</div>
 																			 </div>
 																				<h5 class="hk-sec-title">Ukuran Pesanan</h5>
 																				<div class="row">
@@ -93,13 +96,7 @@
 																								<label for="firstName">Panjang Punggung</label>
 																								<input class="form-control" type="text" name="panjang_punggung" value="" />
 																						</div>
-																						<div class="form-group col-md-12">
-																								<label for="firstName">Jenis Kelamin Pesanan</label>
-																								<select class="form-control custom-select d-block w-100" name="jenis_kelamin">
-																									<option value="laki-laki">Laki-laki</option>
-																									<option value="perempuan">Perempuan</option>
-																								</select>
-																						</div>
+																			
 																					</div>
 																				 </div>
 																				</div>

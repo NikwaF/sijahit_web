@@ -17,13 +17,18 @@ class Pesan_offline extends CI_Controller
 			
 			$data = [
 				'isinya' => 'Admin/Dashboard/pemesanan/pesan_offline',
-				'kategori' => $this->kategori->kategori_join(),
+				'kategori' => $this->kategori_option(),
 				'kode_pemesanan' => $this->kode_pemesanan()
 			];
 			$this->load->view('Templates/Admin/master_dashboard',$data);
 	} else {
 			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
 		}
+	}
+
+	public function kategori_option(){
+		$kategori = $this->kategori->kategori_join();
+		return $kategori;
 	}
 
 	public function kode_pemesanan(){
@@ -106,20 +111,23 @@ class Pesan_offline extends CI_Controller
 
 	public function nambahpesanan(){
 		$post = $this->input->post();
-		$username = $post['namapemesan'];
-		$tanggalreq = $post['reqtanggal'];
-		$nohp = $post['nohp'];
+
 		
+		if(!$this->session->has_userdata('id_customer')){
+			$username = $post['namapemesan'];
+			$tanggalreq = $post['reqtanggal'];
+			$nohp = $post['nohp'];
+			$data_customer = [
+				'nama_customer' => $username,
+				'no_hp' => $nohp,
+				'on_or_off' => 1,
+				'date_created' => date("Y-m-d H:i:s")
+			];
+			$id_customer = $this->insert_customer($data_customer);
+			$this->session->set_userdata('id_customer',$id_customer);
+			$this->session->set_userdata('nama_pemesan',$username);
+		}
 		
-		$data_customer = [
-			'nama_customer' => $username,
-			'no_hp' => $nohp,
-			'on_or_off' => 1,
-			'date_created' => date("Y-m-d H:i:s")
-		];
-		$id_customer = $this->insert_customer($data_customer);
-		$this->session->set_userdata('id_customer',$id_customer);
-		$this->session->set_userdata('nama_pemesan',$username);
 
 		if($this->session->has_userdata('id_customer')){
 			$data_profil_ukuran = [
@@ -141,13 +149,11 @@ class Pesan_offline extends CI_Controller
 			];
 
 			$id_profile_ukuran = $this->insert_profile_ukuran($data_profil_ukuran);
-		$this->session->set_userdata('id_profile_ukuran',$id_profile_ukuran);
+			$this->session->set_userdata('id_profile_ukuran',$id_profile_ukuran);
 		}
-
 
 		if($this->session->has_userdata('id_customer') && $this->session->has_userdata('id_profile_ukuran')){
 			if(!$this->session->has_userdata('pemesanan')){
-
 				$pemesanan = array(
 						'kode_pemesanan' => $this->kode_pemesanan(),
 						'id_customer' => $this->session->userdata('id_customer'),
@@ -160,9 +166,9 @@ class Pesan_offline extends CI_Controller
 				);
 
 				$_SESSION['pemesanan'] = $pemesanan;
-			} else {
+			}
+			
 				if(!isset($_SESSION['pemesanan_detail'])){
-
 					$items = array(
 						'kode_pesanan' => $this->kode_pemesanan(),
 						'id_profile_ukuran' => $this->session->userdata('id_profile_ukuran'),
@@ -174,13 +180,22 @@ class Pesan_offline extends CI_Controller
 					$this->upload_gambar();
 
 					if(!$this->upload->do_upload('uploadmodel')){
-						$error = $this->upload->display_errors();
-						$items['gambar_pesanan'] = $error;
+						$items['gambar_pesanan'] = 'default.jpg';
 					} else {
 						$nama_file = $this->upload->data();
 						$items['gambar_pesanan'] = $nama_file['file_name'];
 					}
 					$_SESSION['pemesanan_detail'][0] = $items;
+
+					if(isset($_SESSION['pemesanan_detail'][0])){
+						$data = [
+							'kategori' => $this->kategori_option(),
+							'kode_pemesanan' => $this->kode_pemesanan(),
+							'isinya' => 'Admin/Dashboard/pemesanan/tambah_lagi_offline'
+						];
+
+						$this->load->view('Templates/Admin/master_dashboard',$data);
+					}
 					
 				} else{
 					$this->upload_gambar();
@@ -201,9 +216,19 @@ class Pesan_offline extends CI_Controller
 					}
 
 					$_SESSION['pemesanan_detail'][$jumlah_pemesanan] = $items;
+					if(isset($_SESSION['pemesanan_detail'][$jumlah_pemesanan])){
+						$data = [
+							'kategori' => $this->kategori_option(),
+							'kode_pemesanan' => $this->kode_pemesanan(),
+							'isinya' => 'Admin/Dashboard/pemesanan/tambah_lagi_offline'
+						];
+
+						$this->load->view('Templates/Admin/master_dashboard',$data);
+					}
 				}
-			}
 		}
+
+
 	}
 
 	public function upload_gambar(){
@@ -237,5 +262,15 @@ class Pesan_offline extends CI_Controller
 	public function coba(){
 		 var_dump($this->session->userdata());
 		
+	}
+
+	public function tambah_lagi(){
+				$data = [
+			'kategori' => $this->kategori_option(),
+			'kode_pemesanan' => $this->kode_pemesanan(),
+			'isinya' => 'Admin/Dashboard/pemesanan/tambah_lagi_offline'
+		];
+
+		$this->load->view('Templates/Admin/master_dashboard',$data);
 	}
 }
