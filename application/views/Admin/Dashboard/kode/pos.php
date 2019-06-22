@@ -30,12 +30,15 @@
                                                     <td><?= $data->kode_pos ?></td>
                                                     <td><?= $data->biaya ?></td>
                                                     <td class="text-center" width="300px">
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/resi') ?>" class="btn btn-info btn-sm">
-                                                            <i class="fa fa-pencil"></i>Update
-                                                        </a>
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-secondary btn-sm">
-                                                            <i class="fa fa-pencil"></i>Delete
-                                                        </a>
+                                                        <form action="<?= site_url('admin/kode/pos/del') ?>" method="post">
+                                                            <a href="<?= site_url('admin/kode/pos/edit/'.$data->kode_pos) ?>" class="btn btn-info btn-sm">
+                                                                <i class="fa fa-pencil"></i>Update
+                                                            </a>
+                                                            <input type="hidden" name="kode_pos" value="<?= $data->kode_pos ?>">
+                                                            <button onclick="return confirm('Apakah anda yakin?')" class="btn btn-secondary btn-sm">
+                                                                <i class="fa fa-trash"></i>Delete
+                                                            </button>
+                                                        </form>
                                                     </td>
                                                 </tr> 
                                                 <?php } ?>   
