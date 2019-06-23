@@ -42,13 +42,13 @@
                                               <div class="form-group col-md-12">
                                                   <label for="firstName">Ukuran</label>
                                                   <select class="form-control custom-select d-block w-100" name="tipe_ukuran[]" id="pilihan_ukuran_tipe" placeholder="Pilih Ukuran">
-<?php foreach($dataUkuran as $ukuran) : ?>
-<option value="<?= $ukuran['id_ukuran_kategori']; ?>"><?= $ukuran['nama_ukuruan'];?></option>
-<?php endforeach; ?> 
-<script>
-var halo = <?php echo json_encode($dataUkuran); ?>;
-console.log(halo);
-</script>
+                                                  <?php foreach($dataUkuran as $ukuran) : ?>
+                                                  <option value="<?= $ukuran['id_ukuran_kategori']; ?>"><?= $ukuran['nama_ukuran'];?></option>
+                                                  <?php endforeach; ?> 
+                                                  <script>
+                                                  var halo = <?php echo json_encode($dataUkuran); ?>;
+                                                  console.log(halo);
+                                                  </script>
                                                   </select>
                                               </div>
                                             </div>

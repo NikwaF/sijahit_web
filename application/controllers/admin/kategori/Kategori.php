@@ -94,6 +94,19 @@ class Kategori extends CI_Controller{
 	public function ihaa(){
     var_dump($this->input->post());
 	}
+
+	public function view()
+	{
+		if(adminLoggedIn()){
+			$data = [
+				'isinya' => 'Admin/Dashboard/kategori/kategori_detail.php',
+			];
+			
+			$this->load->view('Templates/Admin/master_dashboard',$data);
+		} else {
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
 	
 	// public function ahay(){
 		// $datanya = $this->kategori->getTipename();

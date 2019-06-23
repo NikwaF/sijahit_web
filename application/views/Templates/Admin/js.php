@@ -43,7 +43,7 @@
     <script src="<?= base_url('assets/brunette/') ;?>vendors/owl.carousel/dist/owl.carousel.min.js"></script>
 	
 	<!-- Toastr JS -->
-  <!--  <script src="<?= base_url('assets/brunette/') ;?>vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script> -->
+  <script src="<?= base_url('assets/brunette/') ;?>vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script> 
     
     <!-- Init JavaScript -->
     <script src="<?= base_url('assets/brunette/') ;?>dist/js/init.js"></script>

@@ -43,4 +43,14 @@ class Kategori_mdl extends CI_Model{
 		$this->db->join('kategori_ukuran','kategori.id_ukuran = kategori_ukuran.id_kategori_ukuran','inner');
 		return $this->db->get()->result_array();
 	}
+
+
+  public function view_detail(){
+  		$this->db->select('*');
+  		$this->db->from('kategori');
+  		$this->db->where('id_tipe = idtipeyangdipilih');
+  		$this->db->join('kategori_ukuran');
+  		$query = $this->db->get();
+		return $query;
+  	}
 }

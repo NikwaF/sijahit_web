@@ -15,6 +15,13 @@
                                         <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
+
+                                                    <th>Kode Barang</th>
+                                                    <th>Nama Pemesan</th>
+                                                    <th>Tanggal Masuk Pesanan</th>
+                                                    <th>Tanggal Minta</th>
+                                                    <th>Method Order</th>
+                                                    <th>Action</th>
                                                     <th>ID Pemesanan</th>
                                                     <th>Method</th>
                                                     <th>Nama Customer</th>
@@ -25,6 +32,20 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td>JHT00011</td>
+                                                    <td>Willian</td>
+                                                    <td>2019/04/04</td>
+                                                    <td>2019/04/25</td>
+                                                    <td>Online</td>
+                                                    <td>
+                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/resi') ?>" class="btn btn-info btn-sm">
+                                                            <i class="fa fa-pencil"></i>Update Resi
+                                                        </a>
+                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-secondary btn-sm">
+                                                            <i class="fa fa-pencil"></i>Detail
+                                                        </a>
+                                                    </td>
+                                                </tr> 
                                                     <td>Tiger Nixon</td>
                                                     <td>System Architect</td>
                                                     <td>Edinburgh</td>
@@ -62,4 +83,6 @@
                                 </div>
                             </div>
                         </section>
-												</div>
+					</div>
+                </div>
+</div>
