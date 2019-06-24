@@ -10,7 +10,7 @@ class Kategori extends CI_Controller{
 		if(adminLoggedIn()){
 			$data = [
 				'isinya' => 'Admin/Dashboard/kategori/table.php',
-				'data_kategori' => $this->kategori->getKategori()
+				'data_kategori' => $this->kategori->kategori_join()
 			];
 			
 			$this->load->view('Templates/Admin/master_dashboard',$data);
@@ -18,6 +18,8 @@ class Kategori extends CI_Controller{
 			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
 		}
 	}
+
+
 	
 	public function tambah_data(){
 		if(adminLoggedIn()){
@@ -95,11 +97,64 @@ class Kategori extends CI_Controller{
     var_dump($this->input->post());
 	}
 
-	public function view()
+	public function view($id)
 	{
 		if(adminLoggedIn()){
 			$data = [
 				'isinya' => 'Admin/Dashboard/kategori/kategori_detail.php',
+				'datanya' => $this->kategori->getwherekategori($id)
+			];
+			
+			$this->load->view('Templates/Admin/master_dashboard',$data);
+		} else {
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
+
+
+	public function update_kategori($id)
+	{
+		if(adminLoggedIn()){
+			$post = $this->input->post();
+			$data = [
+				'harga_min' => $post['harga_min'], 
+				'harga_max' => $post['harga_max'] 
+			];
+
+			$update = $this->kategori->update_kategori($id, $data);
+
+			if($update){
+				setFlashData('alert alert-success','Data berhasil diUpdate','admin/kategori/kategori/view/'.$id);
+			} else{
+				setFlashData('alert alert-error','Data tidak berhasil diUpdate','admin/kategori/kategori/view/'.$id);
+			}
+		} else {
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
+
+	
+	public function delete_kategori($id){
+		if(adminLoggedIn()){
+			
+			$delete = $this->kategori->delete_kategori($id);
+
+			if($delete){
+				setFlashData('alert alert-success','Data berhasil diHapus','admin/kategori/kategori');
+			} else{
+				setFlashData('alert alert-error','Data tidak berhasil diHapus','admin/kategori/kategori');
+			}
+		} else {
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
+	
+
+	public function update_form_kategori($id){
+		if(adminLoggedIn()){
+			$data = [
+				'isinya' => 'Admin/Dashboard/kategori/update_kategori',
+				'datanya' => $this->kategori->kategori_join()
 			];
 			
 			$this->load->view('Templates/Admin/master_dashboard',$data);

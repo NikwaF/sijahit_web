@@ -18,28 +18,30 @@
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Nama kategori</th>
-                                                    <th>Tipe</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                   <?php 
+                                                        $no = 1;
+                                                        foreach($data_kategori as $data):
+                                                        $id_kategori = $data['id_kategori'];
+                                                      ?>
                                                     <tr>
-    													<td style="width:5%;">.</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
+                                               
+                                                        <td><?= $no; ?></td>
+                                                        <td><?= $data['nama_tipe'] .' - '.$data['nama_ukuran'] ?></td>
                                                         <td class="text-center" width="300px">
-                                                            <a href="<?= site_url('admin/kategori/kategori/view') ?>" class="btn btn-info btn-sm">
+                                                            <a href="<?= site_url('admin/kategori/kategori/view/'.$id_kategori) ?>" class="btn btn-info btn-sm">
                                                                 <i class="fa fa-pencil"></i>View
                                                             </a>
-                                                            <a href="" class="btn btn-primary btn-sm">
-                                                                <i class="fa fa-pencil"></i>Update
-                                                            </a>
-                                                            <a href="" onclick="return confirm('Apakah yakin hapus data?')" class="btn btn-danger btn-sm">
+                                                            <a href="<?= site_url('admin/kategori/kategori/delete_kategori/'.$id_kategori); ?>" onclick="return confirm('Apakah yakin hapus data?')" class="btn btn-danger btn-sm">
                                                                 <i class="fa fa-trash"></i>Delete
                                                             </a>
                                                         </td>
-                                                    </tr>								
+                                                        
+                                                    </tr>		
+                                                    <?php $no++; endforeach; ?>						
                                             </tbody>
                                         </table>
                                     </div>
