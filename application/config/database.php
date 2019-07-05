@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'phpmyadmin',
-	'password' => 'niko21',
-	'database' => 'sijahit',
+	'hostname' => 'webtif.com',
+	'username' => 'u6562453_sijahit',
+	'password' => 'Polije1234',
+	'database' => 'u6562453_db_sijahit',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

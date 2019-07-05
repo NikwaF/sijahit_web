@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-4 d-flex justify-content-center" >
                         <button class="btn btn-warning" style="width:100%;">
-                            List Pemesanan
+                            On going Pemesanan
                         </button>
                     </div>
                 </div>
