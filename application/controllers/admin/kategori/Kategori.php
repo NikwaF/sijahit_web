@@ -25,7 +25,8 @@ class Kategori extends CI_Controller{
 		if(adminLoggedIn()){
 			$data = [
 				'isinya' => 'Admin/Dashboard/kategori/tambah_kategori.php',
-        'dataUkuran' => $this->kategori->getukurantipe()
+				'dataUkuran' => $this->kategori->getukurantipe(),
+				'dataTipe' => $this->getTipe()
 			];
 			
 			$this->load->view('Templates/Admin/master_dashboard',$data);
@@ -56,10 +57,12 @@ class Kategori extends CI_Controller{
 	
 	public function insert_tipe(){
 		if(adminLoggedIn()){
-			$data = ['nama_tipe' => $this->input->post('nama_tipe')];
+			$data = ['nama_tipe' => $this->input->post('namatipe')];
 			
 			$insert = $this->kategori->add_tipe($data);
-			echo($insert);
+			if($insert){
+				setFlashData('alert-inv alert-inv-success','tipe Kategori Kategori Berhasil ditambahkan','admin/kategori/kategori/tambah_data');
+			}
 		}
 	  else {
 			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
@@ -68,34 +71,33 @@ class Kategori extends CI_Controller{
 
   public function insert_ukuran_range_harga(){
     if(adminLoggedIn()){
-      $number_object = count($_POST['tipe_ukuran']);
-      $sukseskah;
-      for($i=0 ; $i < $number_object ; $i++){
-        if(trim($_POST['tipe_ukuran'][$i]) != '' ||trim($_POST['hargamin'][$i]) != ''|| trim($_POST['hargamax'][$i]) != ''  ) {
           $data = [
             'id_tipe' => $_POST['tipe_kategori'],
-            'id_ukuran' => $_POST['tipe_ukuran'][$i],
-            'harga_min' => $_POST['hargamin'][$i],
-            'harga_max' => $_POST['hargamax'][$i]
-          ];
-          $insert_kan = $this->kategori->insert_kategori($data);
-          $sukseskah = $insert_kan;
-        }
-      } 
-      echo json_encode($sukseskah);
+            'id_ukuran' => $_POST['tipe_ukuran'],
+            'harga_min' => $_POST['hargamin'],
+            'harga_max' => $_POST['hargamax']
+					];
+	
+					if(count($this->check_before_insert()) == 0){
+						$insert_kan = $this->kategori->insert_kategori($data);
+						
+						if($insert_kan){
+							setFlashData('alert alert-success','Data Berhasil Ditambahkan','admin/kategori/kategori/tambah_data');
+						} else {
+							setFlashData('alert alert-danger','Data Gagal Ditambahkan!','admin/kategori/kategori/tambah_data');
+						}
+					} else {
+						setFlashData('alert alert-danger','Data Tidak terinput, ukuran untuk tipe tersebut terlah tersedia!','admin/kategori/kategori/tambah_data');
+					}
     } else{
 			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
     }
   }
 	
 	public function getTipe(){
-			$datanya = $this->kategori->gettipe();
-			echo json_encode($datanya);		
+			return $datanya = $this->kategori->gettipe();
 	}
 
-	public function ihaa(){
-    var_dump($this->input->post());
-	}
 
 	public function view($id)
 	{
@@ -161,6 +163,16 @@ class Kategori extends CI_Controller{
 		} else {
 			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
 		}
+	}
+
+	public function check_before_insert(){
+		$data = [
+			'id_tipe' => $_POST['tipe_kategori'],
+			'id_ukuran' => $_POST['tipe_ukuran'],
+		];
+
+		$halo = $this->kategori->get_berfore_insert($data);
+		return $halo;
 	}
 	
 	// public function ahay(){

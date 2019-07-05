@@ -2,7 +2,6 @@
 
 class Pesan_offline extends CI_Controller
 {
-	private $hitungan = 0;
 	
 	function __construct()
 	{

@@ -20,8 +20,7 @@ class Kategori_mdl extends CI_Model{
 	}
 
 	public function add_tipe($data){
-		$this->db->insert('kategori_tipe',$data);
-		return $this->db->insert_id();
+		return $this->db->insert('kategori_tipe',$data);
 	}
 
 	public function update_kategori($id, $datanya){
@@ -44,6 +43,11 @@ class Kategori_mdl extends CI_Model{
 
   public function insert_kategori($data){
     return $this->db->insert('kategori',$data);
+	}
+
+	public function get_berfore_insert($data){
+		$this->db->where($data);
+		return $this->db->get('kategori')->result_array();
 	}
 	
 	public function kategori_join(){

@@ -6,7 +6,7 @@
 
                 <!-- Row -->
                 <div class="row mb-5">
-                    <div class="col-4 d-flex justify-content-center">
+                            <div class="col-4 d-flex justify-content-center">
                      <?php $belum_acc = site_url('admin/pemesanan/pesanan_menunggu_acc'); ?>
                         <button class="btn btn-success" style="width:100%;" onclick="window.location.href='<?= $belum_acc ?>'">
                             Belum di ACC
@@ -27,7 +27,7 @@
                 <div class="row mt-5">
                     <div class="col-xl-12">
                         <section class="hk-sec-wrapper">
-                            <h5 class="hk-sec-title">List Pemesanan yang belum di ACC</h5>
+                            <h5 class="hk-sec-title">List Pemesanan yang belum di Ukur</h5>
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
@@ -39,11 +39,10 @@
                                                     <th>Tanggal Masuk Pesanan</th>
                                                     <th>Tanggal Minta</th>
                                                     <th>Method Order</th>
-                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php foreach($isi_belum_acc as $data): ?>
+                                            <?php foreach($belum_diukur as $data): ?>
                                                 <tr>
                                                     <td><?= $data['kode_pemesanan'] ?></td>
                                                     <td><?= $data['nama_customer'] ?></td>
@@ -54,17 +53,6 @@
                                                     <?php } else { ?>
                                                         <td>Offline</td>
                                                     <?php } ?>
-                                                    <td>
-                                                         <a href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc/detail_belum_acc/'.$data['kode_pemesanan']) ?>" class="btn btn-warning btn-rounded btn-sm">
-                                                            <i class="fa fa-eye"></i>Detail
-                                                        </a>
-                                                        <a href="" class="btn btn-success btn-rounded btn-sm">
-                                                            <i class="fa fa-pencil"></i>Terima
-                                                        </a>
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-danger btn-rounded btn-sm">
-                                                            <i class="fa fa-close"></i>Tolak
-                                                        </a>
-                                                    </td>
                                                 </tr>    
                                             <?php endforeach; ?>
                                             </tbody>

@@ -45,10 +45,7 @@
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc'); ?>">Pesanan Menunggu Acc</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/list_pemesanan'); ?>">List Pemesanan</a>
+                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc'); ?>">List Pemesanan</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline'); ?>">Tambah Pesan Offline</a>

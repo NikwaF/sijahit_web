@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <div class="col-md-4 mb-10">
                         <label>Kode Pos *</label>
-                        <input type="number" class="form-control" name"kode_pos" required="">
+                        <input type="number" class="form-control" name="kode_pos" required="">
                     </div>
                 </div>
                 <div class="form-group">
