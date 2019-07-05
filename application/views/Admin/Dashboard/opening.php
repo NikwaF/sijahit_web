@@ -45,7 +45,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <span class="d-block display-4 text-dark mb-5"><span class="counter-anim"><?= $coba[0]->halo; ?></span></span>
+                                                <span class="d-block display-4 text-dark mb-5"><span class="counter-anim"></span></span>
                                                 <small class="d-block">dikerjakan</small>
                                             </div>
                                         </div>

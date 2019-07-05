@@ -15,7 +15,7 @@ class Resi extends CI_Controller
 	{
 		if(adminLoggedIn()){
 			$data = [
-				'isinya' => 'Admin/Dashboard/resi/cek_resi'
+				'isinya' => 'admin/Dashboard/resi/cek_resi'
 			];
 			$this->load->view('Templates/Admin/master_dashboard', $data);
 		} else {

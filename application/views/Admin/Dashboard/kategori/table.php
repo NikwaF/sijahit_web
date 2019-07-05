@@ -11,18 +11,37 @@
                             <h5 class="hk-sec-title">List Kategori</h5>
                             <div class="row">
                                 <div class="col-sm">
-                            <a class="btn btn-primary mb-10"href="<?= site_url('admin/kategori/kategori/tambah_data') ?>">Tambah</a>
+									<a class="btn btn-primary mb-10" href="<?= site_url('admin/kategori/kategori/tambah_data') ?>">Tambah</a>
                                     <div class="table-wrap">
                                         <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
-                                                    <th>Nama_kategori</th>
-                                                    <th>Detail</th>
+                                                    <th>No.</th>
+                                                    <th>Nama kategori</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <td>Kemeja</td>
-                                              <td><a class="btn btn-primary" data-togle="modal" data-target="#viewlah">view</a></td>
+                                                   <?php 
+                                                        $no = 1;
+                                                        foreach($data_kategori as $data):
+                                                        $id_kategori = $data['id_kategori'];
+                                                      ?>
+                                                    <tr>
+                                               
+                                                        <td><?= $no; ?></td>
+                                                        <td><?= $data['nama_tipe'] .' - '.$data['nama_ukuran'] ?></td>
+                                                        <td class="text-center" width="300px">
+                                                            <a href="<?= site_url('admin/kategori/kategori/view/'.$id_kategori) ?>" class="btn btn-info btn-sm">
+                                                                <i class="fa fa-pencil"></i>View
+                                                            </a>
+                                                            <a href="<?= site_url('admin/kategori/kategori/delete_kategori/'.$id_kategori); ?>" onclick="return confirm('Apakah yakin hapus data?')" class="btn btn-danger btn-sm">
+                                                                <i class="fa fa-trash"></i>Delete
+                                                            </a>
+                                                        </td>
+                                                        
+                                                    </tr>		
+                                                    <?php $no++; endforeach; ?>						
                                             </tbody>
                                         </table>
                                     </div>

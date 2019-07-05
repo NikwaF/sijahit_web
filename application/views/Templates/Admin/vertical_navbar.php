@@ -8,15 +8,15 @@
                         <span>UI</span>
                     </div>
                     <ul class="navbar-nav flex-column">
-										   <li class="nav-item">
+						<li class="nav-item">
                             <a class="nav-link" href="<?= site_url('admin/Dashboard'); ?>" >
                                 <span class="feather-icon"><i data-feather="book"></i></span>
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
                         </li>
-												<li class="nav-item">
+						<li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#masterdrp">
-                                <span class="feather-icon"><i data-feather="layout"></i></span>
+                                <span class="feather-icon"><i data-feather="hard-drive"></i></span>
                                 <span class="nav-link-text">Master Data</span>
                             </a>
                             <ul id="masterdrp" class="nav flex-column collapse collapse-level-1">
@@ -27,18 +27,25 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?= site_url('admin/kodepos/kode_pos'); ?>">Kode Pos</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#pemesanan_drp">
-                                <span class="feather-icon"><i data-feather="layout"></i></span>
+                                <span class="feather-icon"><i data-feather="clipboard"></i></span>
                                 <span class="nav-link-text">Pemesanan</span>
                             </a>
                             <ul id="pemesanan_drp" class="nav flex-column collapse collapse-level-1">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/list_pemesanan'); ?>">List Pemesanan</a>
+                                            <a class="nav-link" href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc'); ?>">List Pemesanan</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<?= site_url('admin/pemesanan/pesan_offline'); ?>">Tambah Pesan Offline</a>
