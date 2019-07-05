@@ -26,4 +26,16 @@ class Pemesanan_mdl extends CI_Model{
   public function get_belum_diukur(){
     return $this->db->get('get_belum_diukur')->result_array();
   }
+
+  public function get_on_going(){
+    return $this->db->get('get_ongoing')->result_array();
+  }
+
+  public function jumlah_detail_ongoing($kode)
+  {
+    $halo = strval($kode);
+    return $this->db->query( "CALL get_jumlah_detail_pesanan(\"".$halo."\")")->result_array();
+    // return  "call get_jumlah_detail_pesanan(\"".$halo."\")";
+  }
+
 }

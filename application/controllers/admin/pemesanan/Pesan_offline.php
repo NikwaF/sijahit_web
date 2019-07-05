@@ -373,7 +373,7 @@ class Pesan_offline extends CI_Controller
 		if(isset($_SESSION['pemesanan_detail'])){
 		for($i=0; $i <= sizeof($_SESSION['pemesanan_detail'])-1 ; $i++){
 			$idnya = $_SESSION['pemesanan_detail'][$i]['id_kategori'];
-			$halo = ['id_kategori' => $idnya];
+			$halo =  $idnya;
 			$kategori = $this->kategori->getwherekategori($halo);
 			array_push($kategori_dong,$kategori);
 		}
@@ -388,6 +388,6 @@ class Pesan_offline extends CI_Controller
 	}
 
 	public function tanggal(){
-		echo $_SESSION['pemesanan']['tanggal_req'];
+		var_dump($_SESSION['pemesanan_detail'][0]['id_kategori']); 
 	}
 }
