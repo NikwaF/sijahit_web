@@ -41,4 +41,12 @@ class Pemesanan_mdl extends CI_Model{
     return $hasil;
   }
 
+  public function update_ong_going($kode){
+    $this->db->select('*');
+    $this->db->from('pemesanan_detail');
+    $this->db->join('kategori_joinan', 'pemesanan_detail.id_kategori = kategori_joinan.id_kategori');
+    $this->db->where(['pemesanan_detail.kode_pesanan' => $kode]);
+    return $this->db->get()->result_array();
+  }
+
 }
