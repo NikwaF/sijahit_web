@@ -51,16 +51,15 @@
                                                          <a href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc/detail_belum_acc/'.$data['kode_pemesanan']) ?>" class="btn btn-light btn-rounded btn-sm">
                                                             <i class="fa fa-eye"></i>Detail
                                                         </a>
-                                                        <a href="" class="btn btn-success btn-rounded btn-sm">
+                                                        <a href="<?= site_url('admin/pemesanan/on_going/update/'.$data['kode_pemesanan']) ?>" class="btn btn-success btn-rounded btn-sm">
                                                             <i class="fa fa-pencil"></i>Update
                                                         </a>
                                                     </td>
                                                 </tr>   
-<?php  endforeach; ?> 
+                                            <?php  endforeach; ?> 
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
                             </div>
                         </section>
 					</div>

@@ -34,4 +34,17 @@ class On_going extends CI_Controller{
 		
 		return $data;		
 	}
+
+	public function update($kode)
+	{
+		if (adminLoggedIn()) {
+			$data= [
+				'isinya'=> 'admin/Dashboard/pemesanan/update_on_going',
+				'update_on_going' => $this->pemesanan->update_ong_going($kode)
+			];
+			$this->load->view('Templates/Admin/master_dashboard', $data);
+		}else{
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
 }
