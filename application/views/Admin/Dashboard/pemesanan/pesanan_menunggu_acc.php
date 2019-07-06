@@ -59,16 +59,60 @@
                                                          <a href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc/detail_belum_acc/'.$data['kode_pemesanan']) ?>" class="btn btn-warning btn-rounded btn-sm">
                                                             <i class="fa fa-eye"></i>Detail
                                                         </a>
-                                                        <a href="" class="btn btn-success btn-rounded btn-sm">
+                                                        <a style="color:#fff"  data-toggle="modal" data-target="#terima" class="btn btn-success btn-rounded btn-sm">
                                                             <i class="fa fa-pencil"></i>Terima
                                                         </a>
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-danger btn-rounded btn-sm">
+                                                        <a style="color:#fff"  data-toggle="modal" data-target="#tolak" class="btn btn-danger btn-rounded btn-sm">
                                                             <i class="fa fa-close"></i>Tolak
                                                         </a>
                                                     </td>
+                                                                       <div class="modal fade" id="terima" tabindex="-1" role="dialog" aria-labelledby="terima" aria-hidden="true">
+                                                                          <div class="modal-dialog" role="document">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="batalkan">Apakah anda benar ingin menerima pesanan?</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <p>Tekan YA untuk menerima pesanan, dan TIDAK untuk tidak</p>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">TIDAK</button>
+                                                                                    <?php $url_terima =  site_url('admin/pemesanan/pesanan_menunggu_acc/terima_pesanan/'.$data['kode_pemesanan']); ?>
+                                                                                    <button type="button" onclick="location.href='<?= $url_terima ?>'" class="btn btn-primary">YA</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+
+                                                                        <div class="modal fade" id="tolak" tabindex="-1" role="dialog" aria-labelledby="tolak" aria-hidden="true">
+                                                                          <div class="modal-dialog" role="document">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="batalkan">Apakah anda benar ingin menerima pesanan?</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <p>Tekan YA untuk menerima pesanan, dan TIDAK untuk tidak</p>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">TIDAK</button>
+                                                                                    <?php $url_tolak =  site_url('admin/pemesanan/pesanan_menunggu_acc/tolak_pesanan/'.$data['kode_pemesanan']); ?>
+                                                                                    <button type="button" onclick="location.href='<?= $url_tolak ?>'" class="btn btn-primary">YA</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        </div>
+                                                    </div>
                                                 </tr>    
                                             <?php endforeach; ?>
                                             </tbody>
+
+                                                                    
                                         </table>
                                     </div>
                                 </div>

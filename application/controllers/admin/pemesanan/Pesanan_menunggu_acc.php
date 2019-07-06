@@ -27,11 +27,42 @@ class Pesanan_menunggu_acc extends CI_Controller{
 			$this->load->view('Templates/Admin/master_dashboard',$data);
 	}
 
+	public function terima_pesanan($kode){
+		$data = [
+			'is_accept' => 1
+		];
+
+		$terima = $this->update_pesanan($data,$kode);
+
+		if($terima){
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','admin/pemesanan/pesanan_menunggu_acc');
+
+		}
+
+	}
+
+	public function tolak_pesanan($kode){
+		$data = [
+			'sudah_ditolak' => 1
+		];
+
+		$tolak =$this->update_pesanan($data,$kode);
+
+		if($tolak){
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','admin/pemesanan/pesanan_menunggu_acc');
+
+		}
+	}
+
+	public function update_pesanan($data,$kode){
+		$update = $this->pemesanan->update_pesanan($data,$kode);
+		return $update;
+	}
+
 	public function halo(){
 
 			$data = [
-				'isinya' => 'Admin/Dashboard/pemesanan/detail_pemesanan',
-				
+				'isinya' => 'Admin/Dashboard/pemesanan/detail_pemesanan',				
 			];
 			$this->load->view('Templates/Admin/master_dashboard',$data);
 	}

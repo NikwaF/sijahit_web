@@ -41,4 +41,9 @@ class Pemesanan_mdl extends CI_Model{
     return $hasil;
   }
 
+  public function update_pesanan($data,$kode){
+    $this->db->where('kode_pemesanan',$kode);
+    return $this->db->update('pemesanan',$data);
+  }
+
 }
