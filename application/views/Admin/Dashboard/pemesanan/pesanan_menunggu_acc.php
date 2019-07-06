@@ -19,8 +19,9 @@
                         </button>
                     </div>
                     <div class="col-4 d-flex justify-content-center" >
-                        <button class="btn btn-warning" style="width:100%;">
-                            On going Pemesanan
+                        <?php $on_going = site_url('admin/pemesanan/on_going'); ?>
+                        <button class="btn btn-warning" style="width:100%;" onclick="window.location.href='<?= $on_going ?>'">
+                            On Going Pemesanan
                         </button>
                     </div>
                 </div>

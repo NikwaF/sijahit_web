@@ -6,7 +6,7 @@
 
                 <!-- Row -->
                 <div class="row mb-5">
-                            <div class="col-4 d-flex justify-content-center">
+                    <div class="col-4 d-flex justify-content-center">
                      <?php $belum_acc = site_url('admin/pemesanan/pesanan_menunggu_acc'); ?>
                         <button class="btn btn-success" style="width:100%;" onclick="window.location.href='<?= $belum_acc ?>'">
                             Belum di ACC
@@ -18,7 +18,7 @@
                             Belum di Ukur
                         </button>
                     </div>
-                <div class="col-4 d-flex justify-content-center" >
+                    <div class="col-4 d-flex justify-content-center" >
                         <?php $on_going = site_url('admin/pemesanan/on_going'); ?>
                         <button class="btn btn-warning" style="width:100%;" onclick="window.location.href='<?= $on_going ?>'">
                             On Going Pemesanan
@@ -28,7 +28,7 @@
                 <div class="row mt-5">
                     <div class="col-xl-12">
                         <section class="hk-sec-wrapper">
-                            <h5 class="hk-sec-title">List Pemesanan yang belum di Ukur</h5>
+                            <h5 class="hk-sec-title">On Going Pemesanan</h5>
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
@@ -36,26 +36,27 @@
                                             <thead>
                                                 <tr>
                                                     <th>Kode pemesanan</th>
-                                                    <th>Nama Pemesan</th>
-                                                    <th>Tanggal Masuk Pesanan</th>
-                                                    <th>Tanggal Minta</th>
-                                                    <th>Method Order</th>
+                                                    <th>Tanggal Update</th>
+                                                    <th>Jumlah Jahitan</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php foreach($belum_diukur as $data): ?>
+                                            <?php  foreach($data_on_going as $data): ?>
                                                 <tr>
                                                     <td><?= $data['kode_pemesanan'] ?></td>
-                                                    <td><?= $data['nama_customer'] ?></td>
-                                                    <td><?= $data['tanggal'] ?></td>
-                                                    <td><?= $data['tanggal_req'] ?></td>
-                                                    <?php if($data['method_order'] == 1){ ?>
-                                                     <td>Online</td>
-                                                    <?php } else { ?>
-                                                        <td>Offline</td>
-                                                    <?php } ?>
-                                                </tr>    
-                                            <?php endforeach; ?>
+                                                    <td>gfgf</td>
+                                                    <td><?= $data[0]['jumlah'] ?></td>
+                                                    <td>
+                                                         <a href="<?= site_url('admin/pemesanan/pesanan_menunggu_acc/detail_belum_acc/'.$data['kode_pemesanan']) ?>" class="btn btn-light btn-rounded btn-sm">
+                                                            <i class="fa fa-eye"></i>Detail
+                                                        </a>
+                                                        <a href="" class="btn btn-success btn-rounded btn-sm">
+                                                            <i class="fa fa-pencil"></i>Update
+                                                        </a>
+                                                    </td>
+                                                </tr>   
+<?php  endforeach; ?> 
                                             </tbody>
                                         </table>
                                     </div>

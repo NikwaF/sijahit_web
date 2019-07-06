@@ -33,7 +33,7 @@
                                                             <td>
                                                               <!-- <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;"> -->
                                                                 <!-- <input type="number" class="form-control" value="<?= $ea['jumlah'] ?>" min="1" max="100" /> -->
-                                                                <?= $ea['jumlah'] ?>
+                                                                <?= intval($ea['jumlah']) ?>
                                                                 <!-- <div class="input-group input-group-sm w-100p">
                                                                 <div class="input-group-prepend">
                                                                 <button style="min-width: 2.5em" class="btn btn-decrement btn-outline-light" type="button"><strong>-</strong></button>
@@ -45,10 +45,10 @@
                                                                 </div>
                                                                 </div> -->
                                                             </td>
-                                                            <td class="text-dark"><?= rupiah($kategorinya[$i][0]['harga_max']* $ea['jumlah']) ?></td>
+                                                            <td class="text-dark"><?= rupiah(intval($kategorinya[$i][0]['harga_max'])* intval($ea['jumlah'])) ?></td>
                                                         </tr>
                                                         <?php
-                                                        $harga_total = $harga_total+$kategorinya[$i][0]['harga_max']* $ea['jumlah'];
+                                                        $harga_total = intval($harga_total)+intval($kategorinya[$i][0]['harga_max'])* intval($ea['jumlah']);
                                                         $i++;
                                                             endforeach;
                                                             } else {
