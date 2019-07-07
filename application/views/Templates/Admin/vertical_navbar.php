@@ -30,7 +30,7 @@
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?= site_url('admin/kodepos/kode_pos'); ?>">Kode Pos</a>
+                                            <a class="nav-link" href="<?= site_url('admin/kode/pos'); ?>">Kode Pos</a>
                                         </li>
                                     </ul>
                                 </li>

@@ -11,14 +11,14 @@
                             <h5 class="hk-sec-title">List Ongkir</h5>
                             <div class="row">
                                 <div class="col-sm">
-                                    <a class="btn btn-primary mb-10" href="<?= site_url('admin/kodepos/kode_pos/tambah_data') ?>">Tambah</a>
+                                    <a class="btn btn-primary mb-10" href="<?= site_url('admin/kode/pos/tambah_data') ?>">Tambah</a>
                                     <div class="table-wrap">
                                         <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Kode Pos</th>
-                                                    <th>Harga</th>
+                                                    <th>Biaya</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -30,12 +30,15 @@
                                                     <td><?= $data->kode_pos ?></td>
                                                     <td><?= $data->harga ?></td>
                                                     <td class="text-center" width="300px">
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/resi') ?>" class="btn btn-info btn-sm">
-                                                            <i class="fa fa-pencil"></i>Update
-                                                        </a>
-                                                        <a href="<?= site_url('admin/pemesanan/list_pemesanan/detail') ?>" class="btn btn-secondary btn-sm">
-                                                            <i class="fa fa-pencil"></i>Delete
-                                                        </a>
+                                                        <form action="<?= site_url('admin/kode/pos/del') ?>" method="post">
+                                                            <a href="<?= site_url('admin/kode/pos/edit/'.$data->kode_pos) ?>" class="btn btn-info btn-sm">
+                                                                <i class="fa fa-pencil"></i>Update
+                                                            </a>
+                                                            <input type="hidden" name="kode_pos" value="<?= $data->kode_pos ?>">
+                                                            <button onclick="return confirm('Apakah anda yakin?')" class="btn btn-secondary btn-sm">
+                                                                <i class="fa fa-trash"></i>Delete
+                                                            </button>
+                                                        </form>
                                                     </td>
                                                 </tr> 
                                                 <?php } ?>   

@@ -64,4 +64,3 @@ class Auth Extends CI_Controller{
 	}
 }
 
-niko
