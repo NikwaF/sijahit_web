@@ -62,7 +62,7 @@
                                                         <a style="color:#fff"  data-toggle="modal" data-target="#terima" class="btn btn-success btn-rounded btn-sm">
                                                             <i class="fa fa-pencil"></i>Terima
                                                         </a>
-                                                        <a style="color:#fff"  data-toggle="modal" data-target="#tolak" class="btn btn-danger btn-rounded btn-sm">
+                                                        <a href="<?= site_url('admin/pemesanan/tolak_pesanan') ?>" class="btn btn-danger btn-rounded btn-sm">
                                                             <i class="fa fa-close"></i>Tolak
                                                         </a>
                                                     </td>
