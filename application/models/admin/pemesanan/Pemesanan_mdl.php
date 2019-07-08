@@ -59,6 +59,7 @@ class Pemesanan_mdl extends CI_Model{
     $this->db->select('*');
     $this->db->from('pemesanan');
     $this->db->join('pemesanan_detail', 'pemesanan.kode_pemesanan = pemesanan_detail.kode_pesanan');
+    $this->db->join('kategori_joinan', 'pemesanan_detail.id_kategori = kategori_joinan.id_kategori');
     $this->db->where($kode);
     return $this->db->get()->result_array();
   }

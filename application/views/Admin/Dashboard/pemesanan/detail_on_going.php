@@ -7,48 +7,24 @@
     <hr>
     <h4 class=hk-sec-tittle>#<?= $detail_on_going[0]['kode_pesanan']  ?></h4><br>
     <div class="row">
+        <?php foreach ($detail_on_going as $data): ?>
         <div class="col-sm">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-8 mb-20">
                     <div class="card w-260p w-sm-290p">
-                        <img class="card-img-top" src="dist/img/cropper.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="<?= base_url(). '/assets/gambar/model_pesanan/'.$data['gambar_pesanan']?>" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Nama Barang</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Deskripsi</h6>
+                            <h5 class="card-title"><?= $data['nama_tipe'] ?></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><?= $data['deskripsi_pesanan'] ?></h6>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Jumlah</li>
-                            <li class="list-group-item">Status</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-8 mb-20">
-                    <div class="card w-260p w-sm-290p">
-                        <img class="card-img-top" src="dist/img/cropper.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Nama Barang</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Deskripsi</h6>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Jumlah</li>
-                            <li class="list-group-item">Status</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-8 mb-20">
-                    <div class="card w-260p w-sm-290p">
-                        <img class="card-img-top" src="dist/img/cropper.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Nama Barang</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Deskripsi</h6>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Jumlah</li>
+                            <li class="list-group-item"><?= $data['jumlah'] ?></li>
                             <li class="list-group-item">Status</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endforeach; ?>
     </div>
 </section>
