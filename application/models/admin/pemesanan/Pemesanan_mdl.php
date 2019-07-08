@@ -54,4 +54,12 @@ class Pemesanan_mdl extends CI_Model{
     return $this->db->get()->result_array();
   }
 
+  public function detail_on_going($kode)
+  {
+    $this->db->select('*');
+    $this->db->from('pemesanan');
+    $this->db->join('pemesanan_detail', 'pemesanan.kode_pemesanan = pemesanan_detail.kode_pesanan');
+    $this->db->where($kode);
+    return $this->db->get()->result_array();
+  }
 }

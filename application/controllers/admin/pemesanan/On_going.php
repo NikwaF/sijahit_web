@@ -47,4 +47,34 @@ class On_going extends CI_Controller{
 			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
 		}
 	}
+
+	public function detail_on_going($kode)
+	{
+		if(adminLoggedIn()){
+			$data= [
+				// 'isinya' => 'admin/Dashboard/pemesanan/detail_on_going',
+				// 'detail_on_going' => $this->pemesanan->detail_on_going($kode),
+				'pemesanan.kode_pemesanan' => $kode,
+				'is_accept' => 1
+			];
+			$data2 = [
+				'detail_on_going' => $this->pemesanan->detail_on_going($data),
+				'isinya' => 'admin/Dashboard/pemesanan/detail_on_going'
+			];
+			// var_dump($data2);
+			$this->load->view('Templates/Admin/master_dashboard', $data2);
+		}else{
+			setFlashData('alert-inv alert-inv-primary','wah! ada yang salah! silahkan login','auth');
+		}
+	}
+
+	function hado($kode){
+			$data= [
+				'pemesanan.kode_pemesanan' => $kode,
+				'is_accept' => 1
+			];
+			$hehe = $this->pemesanan->detail_on_going($data);
+
+			var_dump($hehe);
+	}
 }

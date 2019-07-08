@@ -28,7 +28,7 @@ class Pos extends CI_Controller{
 				'isinya' => 'Admin/Dashboard/kode/tambah'
 			];
 			$this->form_validation->set_rules('kode_pos', 'Kodepos', 'required|min_length[5]|is_unique[ongkir.kode_pos]');
-			$this->form_validation->set_rules('biaya', 'Biaya', 'required');
+			$this->form_validation->set_rules('harga', 'Biaya', 'required');
 
 			$this->form_validation->set_message('is_unique', '{field} telah digunakan, silahkan ganti yang lain!');
 			$this->form_validation->set_message('required', '%s masih kosong, silahkan isi!');
@@ -59,7 +59,7 @@ class Pos extends CI_Controller{
 	{
 		if(adminLoggedIn()){
 			$this->form_validation->set_rules('kode_pos', 'Kodepos', 'required|min_length[5]|callback_code_check');
-			$this->form_validation->set_rules('biaya', 'Biaya', 'required');
+			$this->form_validation->set_rules('harga', 'Biaya', 'required');
 
 			$this->form_validation->set_message('is_unique', '{field} telah digunakan, silahkan ganti yang lain!');
 			$this->form_validation->set_message('required', '%s masih kosong, silahkan isi!');
